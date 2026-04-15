@@ -57,8 +57,8 @@ body {
 }
 
 .btn-outline-success {
-  border-color: var(--color-terciario);
-  color: var(--color-terciario);
+  border-color: var(--color-texto-claro);
+  color: var(--color-texto-claro);
 }
 
 .btn-outline-success:hover {
