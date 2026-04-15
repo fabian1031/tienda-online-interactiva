@@ -117,3 +117,17 @@ botonVaciar.addEventListener("click", () => {
 
 // ======= CARGAR AL INICIAR =======
 cargarCarritoGuardado();
+
+const formContacto = document.getElementById('form-contacto');
+    const mensajeExito = document.getElementById('mensaje-exito');
+
+    if (formContacto) {
+        formContacto.addEventListener('submit', function(e) {
+            e.preventDefault();
+            mensajeExito.style.display = 'block';
+            formContacto.reset();
+            setTimeout(function() {
+                mensajeExito.style.display = 'none';
+            }, 5000);
+        });
+    }
