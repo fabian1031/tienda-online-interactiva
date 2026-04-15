@@ -99,6 +99,21 @@ body {
 }
 
 /* ===================== */
+/* BOTON CARRITO NAVBAR  */
+/* ===================== */
+
+.btn-outline-primary {
+  border-color: var(--color-texto-claro);
+  color: var(--color-texto-claro);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--color-terciario);
+  border-color: var(--color-terciario);
+  color: var(--color-texto-claro);
+}
+
+/* ===================== */
 /*   GRID DE PRODUCTOS   */
 /* ===================== */
 #tarjetas {
@@ -180,6 +195,7 @@ body {
 /* ===================== */
 /*   CARRITO DE COMPRAS  */
 /* ===================== */
+
 .btn-eliminar {
   background-color: var(--color-error);
   border: none;
@@ -266,6 +282,11 @@ body {
   border-top: 2px solid var(--color-secundario);
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+.contacto .card {
+  background-color: var(--color-texto-claro);
+  border: 2px solid var(--color-secundario);
 }
 
 /* ===================== */
