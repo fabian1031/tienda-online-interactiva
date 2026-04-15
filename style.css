@@ -1,3 +1,6 @@
+/* ===================== */
+/*  VARIABLES GLOBALES   */
+/* ===================== */
 :root {
   --color-primario: #4b8cb6;
   --color-secundario: #8cb4d3;
@@ -6,6 +9,7 @@
   --color-texto-oscuro: #2c3e50;
   --color-texto-claro: #ffffff;
   --color-error: #dc3545;
+  --color-error-hover: #c82333;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
@@ -14,6 +18,9 @@
   --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
 }
 
+/* ===================== */
+/*     ESTILOS BASE      */
+/* ===================== */
 body {
   background-color: var(--color-fondo);
   color: var(--color-texto-oscuro);
@@ -26,6 +33,9 @@ body {
   flex-direction: column;
 }
 
+/* ===================== */
+/*        NAVBAR         */
+/* ===================== */
 .navbar {
   background-color: var(--color-primario) !important;
   box-shadow: var(--shadow-sm);
@@ -36,22 +46,26 @@ body {
   color: var(--color-texto-claro) !important;
   font-weight: 700;
   font-size: 1.5rem;
+  transition: color 0.3s ease;
 }
 
 .navbar-brand:hover {
   color: var(--color-terciario) !important;
-  transition: color 0.3s ease;
 }
 
 .nav-link {
   color: var(--color-texto-claro) !important;
   margin: 0 var(--spacing-sm);
+  transition: color 0.3s ease;
 }
 
 .nav-link:hover {
   color: var(--color-terciario) !important;
 }
 
+/* ===================== */
+/*        BOTONES        */
+/* ===================== */
 .btn {
   border-radius: 25px;
 }
@@ -67,6 +81,9 @@ body {
   color: var(--color-texto-claro);
 }
 
+/* ===================== */
+/*   GRID DE PRODUCTOS   */
+/* ===================== */
 #tarjetas {
   display: grid;
   grid-template-columns: 1fr;
@@ -77,6 +94,9 @@ body {
   width: 100%;
 }
 
+/* ===================== */
+/* TARJETAS DE PRODUCTOS */
+/* ===================== */
 .card {
   border: none;
   border-radius: 12px;
@@ -140,6 +160,9 @@ body {
   transform: scale(1.02);
 }
 
+/* ===================== */
+/*   CARRITO DE COMPRAS  */
+/* ===================== */
 .btn-eliminar {
   background-color: var(--color-error);
   border: none;
@@ -152,7 +175,7 @@ body {
 }
 
 .btn-eliminar:hover {
-  background-color: #c82333;
+  background-color: var(--color-error-hover);
 }
 
 .carrito-container {
@@ -228,6 +251,9 @@ body {
   font-weight: 700;
 }
 
+/* ===================== */
+/*        FOOTER         */
+/* ===================== */
 footer {
   background-color: var(--color-primario);
   color: var(--color-texto-claro);
@@ -236,6 +262,9 @@ footer {
   margin-top: auto;
 }
 
+/* ===================== */
+/*      RESPONSIVE       */
+/* ===================== */
 @media (min-width: 768px) {
   #tarjetas {
     grid-template-columns: repeat(2, 1fr);
