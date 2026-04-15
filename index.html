@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -15,36 +15,40 @@
 
 <body>
     <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="https://perot-m.imgix.net/wp-content/uploads/earth-1.gif" alt="Logo" width="50" height="50" class="me-2">
-                RutaViajera
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Destinos</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link active" href="#">Experiencias/Tours</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Contacto</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
-            </div>
-        </div>
-    </nav>
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="https://perot-m.imgix.net/wp-content/uploads/earth-1.gif" alt="Logo" width="50" height="50" class="me-2">
+      RutaViajera
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Destinos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Experiencias/Tours</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+      <!-- Botón carrito -->
+      <button class="btn btn-outline-primary ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#carritoOffcanvas">
+        🛒 Carrito <span id="contador-carrito" class="badge bg-danger">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
 
   <main id="contenedor">
     
@@ -197,7 +201,6 @@
   </div>
 </section>
  
-<!-- Modales -->
 <!-- Modal Colombia -->
 <div class="modal fade" id="modalColombia" tabindex="-1">
   <div class="modal-dialog modal-lg">
@@ -433,11 +436,174 @@
 </div>
 
 <!-- Modal Cuba -->
-<div class="modal
+<div class="modal fade" id="modalCuba" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h6 class="text-muted fw-bold">CUBA</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://flagcdn.com/w320/cu.png" class="img-fluid rounded mb-3" alt="Cuba">
+        <h4 class="fw-bold">La Habana, Varadero, Trinidad y más</h4>
+        <div class="d-flex gap-4 my-3 text-muted">
+          <span>📅 9 Días / 8 Noches</span>
+          <span>❌ Cancelación gratuita</span>
+        </div>
+        <div class="d-flex gap-4 mb-3 text-muted">
+          <span>🗣️ Español</span>
+          <span>✈️ Suma 28.000 millas</span>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <p class="mb-0 text-muted">Desde</p>
+            <h4 class="text-danger fw-bold">$ 2.700.000</h4>
+          </div>
+          <div class="text-end">
+            <p class="text-warning mb-0">⭐ 4.4/5</p>
+            <small class="text-decoration-underline">18 opiniones</small>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary btn-agregar" data-nombre="Cuba" data-precio="2700000">🛒 Reservar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Costa Rica -->
+<div class="modal fade" id="modalCostaRica" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h6 class="text-muted fw-bold">COSTA RICA</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://flagcdn.com/w320/cr.png" class="img-fluid rounded mb-3" alt="Costa Rica">
+        <h4 class="fw-bold">San José, Manuel Antonio, Arenal y más</h4>
+        <div class="d-flex gap-4 my-3 text-muted">
+          <span>📅 10 Días / 9 Noches</span>
+          <span>❌ Cancelación gratuita</span>
+        </div>
+        <div class="d-flex gap-4 mb-3 text-muted">
+          <span>🗣️ Español</span>
+          <span>✈️ Suma 31.000 millas</span>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <p class="mb-0 text-muted">Desde</p>
+            <h4 class="text-danger fw-bold">$ 3.100.000</h4>
+          </div>
+          <div class="text-end">
+            <p class="text-warning mb-0">⭐ 4.7/5</p>
+            <small class="text-decoration-underline">33 opiniones</small>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary btn-agregar" data-nombre="Costa Rica" data-precio="3100000">🛒 Reservar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Panamá -->
+<div class="modal fade" id="modalPanama" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h6 class="text-muted fw-bold">PANAMÁ</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://flagcdn.com/w320/pa.png" class="img-fluid rounded mb-3" alt="Panamá">
+        <h4 class="fw-bold">Ciudad de Panamá, Bocas del Toro, Colón y más</h4>
+        <div class="d-flex gap-4 my-3 text-muted">
+          <span>📅 8 Días / 7 Noches</span>
+          <span>❌ Cancelación gratuita</span>
+        </div>
+        <div class="d-flex gap-4 mb-3 text-muted">
+          <span>🗣️ Español</span>
+          <span>✈️ Suma 29.000 millas</span>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <p class="mb-0 text-muted">Desde</p>
+            <h4 class="text-danger fw-bold">$ 2.800.000</h4>
+          </div>
+          <div class="text-end">
+            <p class="text-warning mb-0">⭐ 4.5/5</p>
+            <small class="text-decoration-underline">25 opiniones</small>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary btn-agregar" data-nombre="Panamá" data-precio="2800000">🛒 Reservar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Ecuador -->
+<div class="modal fade" id="modalEcuador" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h6 class="text-muted fw-bold">ECUADOR</h6>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://flagcdn.com/w320/ec.png" class="img-fluid rounded mb-3" alt="Ecuador">
+        <h4 class="fw-bold">Quito, Galápagos, Cuenca y más</h4>
+        <div class="d-flex gap-4 my-3 text-muted">
+          <span>📅 11 Días / 10 Noches</span>
+          <span>❌ Cancelación gratuita</span>
+        </div>
+        <div class="d-flex gap-4 mb-3 text-muted">
+          <span>🗣️ Español</span>
+          <span>✈️ Suma 33.000 millas</span>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <p class="mb-0 text-muted">Desde</p>
+            <h4 class="text-danger fw-bold">$ 3.300.000</h4>
+          </div>
+          <div class="text-end">
+            <p class="text-warning mb-0">⭐ 4.8/5</p>
+            <small class="text-decoration-underline">44 opiniones</small>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary btn-agregar" data-nombre="Ecuador" data-precio="3300000">🛒 Reservar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+<div class="col-md-4">
+    <div class="card p-3 shadow">
+      <h4>🛒 Carrito de viajes</h4>
+      <ul id="lista-carrito" class="list-group mb-3"></ul>
+      <p id="mensaje-vacio" class="text-muted">Tu carrito está vacío</p>
+      <h4>Total: <span id="total">$0</span></h4>
+      <button id="btn-vaciar" class="btn btn-danger w-100 mt-2">Vaciar Carrito</button>
+    </div>
+  </div>
+  </section>
  
- 
- 
-  </main>
+</main>
     <footer id="pieDePagina">
 
     </footer>
