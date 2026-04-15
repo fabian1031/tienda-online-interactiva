@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Agencia de Viajes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    :root {
+        --color-primario: #4b8cb6;
+        --color-secundario: #8cb4d3;
+        --color-fondo: #e2edf7;
+        --color-texto: #f9ffff;
+        --color-terciario: #f26f41;
+        --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05);
+        --bg-card-review: #faf9f9;
+    }
+
+
+
+    .text-rese {
+        color: var(--color-primario);
+    }
+
+    .rese-card {
+        position: relative;
+        border: none;
+        border-radius: 22px;
+        background-color: var(--bg-card-review);
+        box-shadow: var(--shadow-card);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .rese-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 30px rgba(75, 140, 182, 0.15);
+    }
+
+    .img-persona {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .titulo-nombre-carta {
+        color: var(--color-primario);
+    }
+
+    .star-rating i {
+        color: #f2c94c;
+        font-size: 1.2rem;
+    }
+
+    .verify-icon {
+        color: #26a0ed !important;
+        margin-left: 10px;
+    }
+
+
+    .google-logo {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 1.5rem;
+        opacity: 0.9;
+    }
+
+
+    .leer-mas-link {
+        color: var(--color-primario);
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .leer-mas-link:hover {
+        color: var(--color-terciario);
+    }
+
+    .btn-trustindex {
+        background-color: #1a603c;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-trustindex:hover {
+        background-color: #124d2e;
+        color: white;
+    }
+
+    .btn-arrow-slider {
+        background-color: white;
+        color: #000000;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border: none;
+        transition: color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-arrow-slider:hover {
+        color: var(--color-terciario);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+</style>
+
+
+<body>
+    <section class=" py-5 px-3">
+        <div class="container py-3">
+
+            <div class="row mb-5 justify-content-center text-center">
+                <div class=" col-12 ">
+                    <h4 class="fw-bold mb-3">RESEÑAS DE NUESTROS CLIENTES</h4>
+                    <div class="star-rating big-stars mb-2">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="text-rese fs-5">Con <strong>113 reseñas</strong> en</p>
+                    <div class=" mb-3">
+                        <span class="fs-2 fw-bold">
+                            <span style="color: #4285F4;">G</span><span style="color: #EA4335;">o</span><span
+                                style="color: #FBBC05;">o</span><span style="color: #4285F4;">g</span><span
+                                style="color: #34A853;">l</span><span style="color: #EA4335;">e</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-slider position-relative">
+
+                <div class="row g-4 align-items-stretch">
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="rese-card h-100 p-4">
+                            <div class="google-logo">
+                                <i class="bi bi-google"></i>
+                            </div>
+
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?&w=100&q=80&auto=format&fit=crop"
+                                    class="img-persona me-3" alt="David Narvaez">
+                                <div>
+                                    <h6 class="titulo-nombre-carta fw-bold mb-1">David Narvaez</h6>
+                                    <p class="text-muted small mb-0">hace 1 semana</p>
+                                </div>
+                            </div>
+                            <div class="star-rating d-flex align-items-center mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-check-circle-fill verify-icon"></i>
+                            </div>
+                            <p class="text-review-body flex-grow-1">Excelente experiencia</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="rese-card h-100 p-4">
+                            <div class="google-logo">
+                                <i class="bi bi-google"></i>
+                            </div>
+
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?&w=100&q=80&auto=format&fit=crop"
+                                    class="img-persona me-3" alt="Lorena Saavedra">
+                                <div>
+                                    <h6 class="titulo-nombre-carta fw-bold mb-1">Lorena Saavedra</h6>
+                                    <p class="text-muted small mb-0">hace 2 semanas</p>
+                                </div>
+                            </div>
+                            <div class="star-rating d-flex align-items-center mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-check-circle-fill verify-icon"></i>
+                            </div>
+                            <p class="text-review-body flex-grow-1 mb-2">Excelente experiencia! La agencia siempre
+                                estuvo muy pendiente de nosotros en todo. Súper recomendados, volvería...</p>
+                            <a href="#" class="leer-mas-link small">Leer más</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="rese-card h-100 p-4">
+                            <div class="google-logo">
+                                <i class="bi bi-google"></i>
+                            </div>
+
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVyc29ufGVufDB8fDB8fHww"
+                                    alt="yenny gutierrez" class="img-persona me-3">
+                                <div>
+                                    <h6 class="titulo-nombre-carta fw-bold mb-1">yenny gutierrez</h6>
+                                    <p class="text-muted small mb-0">hace 2 semanas</p>
+                                </div>
+                            </div>
+                            <div class="star-rating d-flex align-items-center mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-check-circle-fill verify-icon"></i>
+                            </div>
+                            <p class="text-review-body flex-grow-1 mb-2">Expectativas y cumplimiento a todo lo ofrecido.
+                            </p>
+                            <p class="text-review-body small">Agradecimientos y...</p>
+                            <a href="#" class="leer-mas-link small">Leer más</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="rese-card h-100 p-4">
+                            <div class="google-logo">
+                                <i class="bi bi-google"></i>
+                            </div>
+
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://plus.unsplash.com/premium_photo-1678197937465-bdbc4ed95815?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="Daniel Felipe " class="img-persona me-3">
+                                <div>
+                                    <h6 class="titulo-nombre-carta fw-bold mb-1">Daniel Felipe Baldo...</h6>
+                                    <p class="text-muted small mb-0">hace 2 semanas</p>
+                                </div>
+                            </div>
+                            <div class="star-rating d-flex align-items-center mb-3">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-check-circle-fill verify-icon"></i>
+                            </div>
+                            <p class="text-review-body flex-grow-1 mb-2">Muchísimas gracias a Moechi por tan bella
+                                experiencia en el Amazonas. Muy complacido de verdad con tanta naturaleza,...</p>
+                            <a href="#" class="leer-mas-link small">Leer más</a>
+                        </div>
+                    </div>
+
+                </div> <button class="btn-arrow-slider position-absolute top-50 end-0 translate-middle-y me-3"
+                    type="button" aria-label="Siguiente reseña">
+                    <i class="bi bi-chevron-right fs-5"></i>
+                </button>
+
+            </div>
+            <div class="row mt-4 pt-3 justify-content-end">
+                <div class="col-md-4 col-sm-12 text-md-end text-center">
+                    <a href="https://www.trustindex.io/" target="_blank" class="btn btn-trustindex py-2 px-3">Verificado
+                        por: Trustindex <i class="bi bi-info-circle ms-1"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
