@@ -16,6 +16,8 @@
   --spacing-xl: 2rem;
   --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
   --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+  --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --bg-card-review: #faf9f9;
 }
 
 /* ===================== */
@@ -363,3 +365,95 @@ footer {
     top: 20px;
   }
 }
+ .text-rese {
+        color: var(--color-primario);
+    }
+
+    .rese-card {
+        position: relative;
+        border: none;
+        border-radius: 22px;
+        background-color: var(--bg-card-review);
+        box-shadow: var(--shadow-card);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .rese-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 30px rgba(75, 140, 182, 0.15);
+    }
+
+    .img-persona {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .titulo-nombre-carta {
+        color: var(--color-primario);
+    }
+
+    .star-rating i {
+        color: #f2c94c;
+        font-size: 1.2rem;
+    }
+
+    .verify-icon {
+        color: #26a0ed !important;
+        margin-left: 10px;
+    }
+
+
+    .google-logo {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 1.5rem;
+        opacity: 0.9;
+    }
+
+
+    .leer-mas-link {
+        color: var(--color-primario);
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .leer-mas-link:hover {
+        color: var(--color-terciario);
+    }
+
+    .btn-trustindex {
+        background-color: #1a603c;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-trustindex:hover {
+        background-color: #124d2e;
+        color: white;
+    }
+
+    .btn-arrow-slider {
+        background-color: white;
+        color: #000000;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border: none;
+        transition: color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-arrow-slider:hover {
+        color: var(--color-terciario);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
