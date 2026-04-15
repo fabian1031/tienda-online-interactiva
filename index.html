@@ -44,10 +44,371 @@
         </div>
     </nav>
 
-    <main id="tarjetas">
-
-
-    </main>
+  <main id="contenedor">
+    
+ 
+    <section id="destinos">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+ 
+      <!-- Tarjeta 1: Colombia -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="./assets/cartagena.png" class="card-img-top" alt="Colombia" />
+          <div class="card-body">
+            <h5 class="card-title">🇨🇴 Colombia</h5>
+            <p class="card-text">Bogotá, Cartagena, Medellín</p>
+            <p class="card-text">$ 2.500.000</p>
+            <button class="btn btn-primary btn-agregar" data-nombre="Colombia" data-precio="2500000">🛒 Reservar</button>
+            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalColombia">ℹ️ Ver más</button>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Tarjeta 2: México -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="./assets/mexico.png" class="card-img-top" alt="México" />
+          <div class="card-body">
+            <h5 class="card-title">🇲🇽 México</h5>
+            <p class="card-text">Cancún, CDMX, Tulum</p>
+            <p class="card-text">$ 3.200.000</p>
+            <button class="btn btn-primary btn-agregar" data-nombre="México" data-precio="3200000">🛒 Reservar</button>
+            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalMexico">ℹ️ Ver más</button>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Tarjeta 3: Brasil -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="./assets/brasil.png" class="card-img-top" alt="Brasil" />
+          <div class="card-body">
+            <h5 class="card-title">🇧🇷 Brasil</h5>
+            <p class="card-text">Río de Janeiro, São Paulo</p>
+            <p class="card-text">$ 4.000.000</p>
+            <button class="btn btn-primary btn-agregar" data-nombre="Brasil" data-precio="4000000">🛒 Reservar</button>
+            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalBrasil">ℹ️ Ver más</button>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Tarjeta 4: Argentina -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="./assets/agentina.png" class="card-img-top" alt="Argentina" />
+          <div class="card-body">
+            <h5 class="card-title">🇦🇷 Argentina</h5>
+            <p class="card-text">Buenos Aires, Patagonia</p>
+            <p class="card-text">$ 3.800.000</p>
+            <button class="btn btn-primary btn-agregar" data-nombre="Argentina" data-precio="3800000">🛒 Reservar</button>
+            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalArgentina">ℹ️ Ver más</button>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Tarjeta 5: Perú -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="./assets/peru.png" class="card-img-top" alt="Perú" />
+          <div class="card-body">
+            <h5 class="card-title">🇵🇪 Perú</h5>
+            <p class="card-text">Machu Picchu, Cusco, Lima</p>
+            <p class="card-text">$ 2.900.000</p>
+            <button class="btn btn-primary btn-agregar" data-nombre="Perú" data-precio="2900000">🛒 Reservar</button>
+            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalPeru">ℹ️ Ver más</button>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Tarjeta 6: Chile -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="./assets/chile.png" class="card-img-top" alt="Chile" />
+          <div class="card-body">
+            <h5 class="card-title">🇨🇱 Chile</h5>
+            <p class="card-text">Santiago, Torres del Paine</p>
+            <p class="card-text">$ 3.500.000</p>
+            <button class="btn btn-primary btn-agregar" data-nombre="Chile" data-precio="3500000">🛒 Reservar</button>
+            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalChile">ℹ️ Ver más</button>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Tarjeta 7: Cuba -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://flagcdn.com/w320/cu.png" class="card-img-top" alt="Cuba" />
+          <div class="card-body">
+            <h5 class="card-title">🇨🇺 Cuba</h5>
+            <p class="card-text">La Habana, Varadero</p>
+            <p class="card-text">$ 2.700.000</p>
+            <button class="btn btn-primary btn-agregar" data-nombre="Cuba" data-precio="2700000">🛒 Reservar</button>
+            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalCuba">ℹ️ Ver más</button>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Tarjeta 8: Costa Rica -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://flagcdn.com/w320/cr.png" class="card-img-top" alt="Costa Rica" />
+          <div class="card-body">
+            <h5 class="card-title">🇨🇷 Costa Rica</h5>
+            <p class="card-text">San José, Manuel Antonio</p>
+            <p class="card-text">$ 3.100.000</p>
+            <button class="btn btn-primary btn-agregar" data-nombre="Costa Rica" data-precio="3100000">🛒 Reservar</button>
+            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalCostaRica">ℹ️ Ver más</button>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Tarjeta 9: Panamá -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://flagcdn.com/w320/pa.png" class="card-img-top" alt="Panamá" />
+          <div class="card-body">
+            <h5 class="card-title">🇵🇦 Panamá</h5>
+            <p class="card-text">Ciudad de Panamá, Bocas del Toro</p>
+            <p class="card-text">$ 2.800.000</p>
+            <button class="btn btn-primary btn-agregar" data-nombre="Panamá" data-precio="2800000">🛒 Reservar</button>
+            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalPanama">ℹ️ Ver más</button>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Tarjeta 10: Ecuador -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://flagcdn.com/w320/ec.png" class="card-img-top" alt="Ecuador" />
+          <div class="card-body">
+            <h5 class="card-title">🇪🇨 Ecuador</h5>
+            <p class="card-text">Quito, Galápagos, Cuenca</p>
+            <p class="card-text">$ 3.300.000</p>
+            <button class="btn btn-primary btn-agregar" data-nombre="Ecuador" data-precio="3300000">🛒 Reservar</button>
+            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalEcuador">ℹ️ Ver más</button>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<!-- Modales -->
+<div class="modal fade" id="modalColombia" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🇨🇴 Colombia</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://flagcdn.com/w320/co.png" class="img-fluid mb-3">
+        <p>📍 País de diversidad natural y cultural, hogar del café más famoso del mundo.</p>
+        <p>💰 Precio: $2.500.000</p>
+        <p>🌤️ Clima: Tropical, varía según la región</p>
+        <p>🗣️ Idioma: Español</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="modal fade" id="modalMexico" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🇲🇽 México</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://flagcdn.com/w320/mx.png" class="img-fluid mb-3">
+        <p>📍 Tierra de playas paradisíacas, ruinas mayas y gastronomía única en el mundo.</p>
+        <p>💰 Precio: $3.200.000</p>
+        <p>🌤️ Clima: Cálido y seco en el norte, tropical en el sur</p>
+        <p>🗣️ Idioma: Español</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="modal fade" id="modalBrasil" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🇧🇷 Brasil</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://flagcdn.com/w320/br.png" class="img-fluid mb-3">
+        <p>📍 El país más grande de Sudamérica, famoso por el carnaval, el Amazonas y sus playas.</p>
+        <p>💰 Precio: $4.000.000</p>
+        <p>🌤️ Clima: Tropical y húmedo en la mayor parte del territorio</p>
+        <p>🗣️ Idioma: Portugués</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="modal fade" id="modalArgentina" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🇦🇷 Argentina</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://flagcdn.com/w320/ar.png" class="img-fluid mb-3">
+        <p>📍 Tierra del tango, los glaciares patagónicos y la mejor carne del mundo.</p>
+        <p>💰 Precio: $3.800.000</p>
+        <p>🌤️ Clima: Varía desde subtropical en el norte hasta frío en la Patagonia</p>
+        <p>🗣️ Idioma: Español</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="modal fade" id="modalPeru" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🇵🇪 Perú</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://flagcdn.com/w320/pe.png" class="img-fluid mb-3">
+        <p>📍 Hogar de Machu Picchu y la civilización Inca, con una gastronomía reconocida mundialmente.</p>
+        <p>💰 Precio: $2.900.000</p>
+        <p>🌤️ Clima: Seco en la costa, frío en los Andes, húmedo en la selva</p>
+        <p>🗣️ Idioma: Español y Quechua</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="modal fade" id="modalChile" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🇨🇱 Chile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://flagcdn.com/w320/cl.png" class="img-fluid mb-3">
+        <p>📍 País de contrastes con desiertos, glaciares, viñedos y el fin del mundo.</p>
+        <p>💰 Precio: $3.500.000</p>
+        <p>🌤️ Clima: Desértico en el norte, templado en el centro, frío en el sur</p>
+        <p>🗣️ Idioma: Español</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="modal fade" id="modalCuba" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🇨🇺 Cuba</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://flagcdn.com/w320/cu.png" class="img-fluid mb-3">
+        <p>📍 Isla caribeña famosa por su música, sus autos clásicos y las playas de Varadero.</p>
+        <p>💰 Precio: $2.700.000</p>
+        <p>🌤️ Clima: Tropical, cálido todo el año</p>
+        <p>🗣️ Idioma: Español</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="modal fade" id="modalCostaRica" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🇨🇷 Costa Rica</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://flagcdn.com/w320/cr.png" class="img-fluid mb-3">
+        <p>📍 Paraíso de biodiversidad, volcanes activos y playas en dos océanos.</p>
+        <p>💰 Precio: $3.100.000</p>
+        <p>🌤️ Clima: Tropical, con estación seca y lluviosa</p>
+        <p>🗣️ Idioma: Español</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="modal fade" id="modalPanama" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🇵🇦 Panamá</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://flagcdn.com/w320/pa.png" class="img-fluid mb-3">
+        <p>📍 Puente entre dos continentes, famoso por su canal, sus islas y su vida moderna.</p>
+        <p>💰 Precio: $2.800.000</p>
+        <p>🌤️ Clima: Tropical, cálido y húmedo todo el año</p>
+        <p>🗣️ Idioma: Español</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="modal fade" id="modalEcuador" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">🇪🇨 Ecuador</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="https://flagcdn.com/w320/ec.png" class="img-fluid mb-3">
+        <p>📍 País que alberga las Islas Galápagos, una de las maravillas naturales del mundo.</p>
+        <p>💰 Precio: $3.300.000</p>
+        <p>🌤️ Clima: Varía según la región, desde tropical hasta frío andino</p>
+        <p>🗣️ Idioma: Español</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+ 
+ 
+  </main>
     <footer id="pieDePagina">
 
     </footer>
