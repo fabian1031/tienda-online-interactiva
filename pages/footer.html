@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
+    /* Se define la paleta de colores a trabajar */
     :root {
         --color-primario: #4b8cb6;
         --color-secundario: #8cb4d3;
@@ -25,12 +26,14 @@
         --color-terciario: #f26f41
     }
 
+    /* Se define el color de fondo del footer */
     .main-footer {
         background-color: var(--color-primario);
         color: var(--color-texto);
         border-top: 1px solid rgba(255, 255, 255, 0.05);
     }
 
+    /* Se define el color de los enlaces del footer */
     .footer-link {
         color: var(--color-fondo);
         text-decoration: none;
@@ -40,12 +43,13 @@
         display: inline-block;
     }
 
+    /*defino el comportamiento del footer-link al pasar el mouse */
     .footer-link:hover {
         color: var(--color-terciario);
         transform: translateX(5px);
     }
 
-
+    /* defino tipo card transparent que va a llevar almacenado los nombres de nosotros */
     .miembros-card {
         background: rgba(205, 78, 78, 0.03);
         border: 1px solid rgba(248, 248, 248, 0.08);
@@ -57,6 +61,7 @@
         gap: 15px;
     }
 
+    /* comportamiento que llevan las cards al pasar el mosue por encima */
     .miembros-card:hover {
         background: rgba(14, 165, 233, 0.1);
         border-color: var(--color-terciario);
@@ -64,6 +69,7 @@
         box-shadow: 0 10px 20px #000000;
     }
 
+    /* punto almacenado en un div color naranja como detalle extra */
     .miembros-dot {
         width: 8px;
         height: 8px;
@@ -72,6 +78,7 @@
         box-shadow: 0 0 8px var(--color-terciario);
     }
 
+    /* defino el tipo de botones que van a llevar los iconos de las redes sociales */
     .redes-btn {
         width: 37px;
         height: 37px;
@@ -84,6 +91,7 @@
         transition: 0.2s;
     }
 
+    /* comportamiento que llevan los botones al pasar el mouse por encima */
     .redes-btn:hover {
         background: var(--color-terciario);
         transform: scale(1.1);
@@ -91,12 +99,14 @@
     }
 
     /* Input de suscripción  no se si dejarlo */
+    /* defino el tipo de input que va a llevar el newsletter */
     .footer-input {
         background: rgba(255, 255, 255, 0.05) !important;
         border: 1px solid rgba(255, 255, 255, 0.1) !important;
         color: white !important;
     }
 
+    /* comportamiento que llevan los input al dar click y da un borde */
     .footer-input:focus {
         border-color: var(--color-terciario) !important;
     }
