@@ -2,7 +2,6 @@ let cantidadProductos = 0;
 let totalAcumulado = 0;
 
 let contadorCarrito = document.getElementById("contador-carrito");
-let botones = document.querySelectorAll(".btn-agregar");
 let listaCarrito = document.getElementById("lista-carrito");
 let totalProductos = document.getElementById("total");
 let botonVaciar = document.getElementById("btn-vaciar");
@@ -11,6 +10,7 @@ let mensajeVacio = document.getElementById("mensaje-vacio");
 // ======= LOCALSTORAGE =======
 
 function guardarCarrito(nombre, precio) {
+  if (!nombre || !precio) return;
   let carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
   carritoGuardado.push({ nombre, precio });
   localStorage.setItem("carrito", JSON.stringify(carritoGuardado));
@@ -30,6 +30,7 @@ function limpiarStorage() {
 function cargarCarritoGuardado() {
   let carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || [];
   carritoGuardado.forEach(item => {
+    if (!item.nombre || !item.precio) return; // ignora items inválidos
     agregarItemAlDOM(item.nombre, item.precio);
     totalAcumulado += item.precio;
     cantidadProductos++;
@@ -59,7 +60,7 @@ function agregarItemAlDOM(nombre, precio) {
 
   let botonEliminar = document.createElement("button");
   botonEliminar.textContent = "X";
-  botonEliminar.classList.add("btn", "btn-danger", "btn-sm");
+  botonEliminar.classList.add("btn", "btn-sm");
 
   botonEliminar.addEventListener("click", () => {
     eliminarItem(nuevoItem, precio, nombre);
@@ -69,20 +70,24 @@ function agregarItemAlDOM(nombre, precio) {
   listaCarrito.appendChild(nuevoItem);
 }
 
-function agregarProducto(cuenta) {
-  let precio = Number(cuenta.target.dataset.precio);
-  let nombre = cuenta.target.dataset.nombre;
+// ======= EVENTO GLOBAL =======
+document.addEventListener("click", function(e) {
+  if (e.target.classList.contains("btn-agregar")) {
+    let precio = Number(e.target.dataset.precio);
+    let nombre = e.target.dataset.nombre;
 
-  totalAcumulado += precio;
-  cantidadProductos++;
+    if (!nombre || !precio) return;
 
-  mensajeVacio.style.display = "none";
+    totalAcumulado += precio;
+    cantidadProductos++;
+    mensajeVacio.style.display = "none";
 
-  guardarCarrito(nombre, precio);
-  agregarItemAlDOM(nombre, precio);
-  updateTotal();
-  updateBadge();
-}
+    guardarCarrito(nombre, precio);
+    agregarItemAlDOM(nombre, precio);
+    updateTotal();
+    updateBadge();
+  }
+});
 
 function eliminarItem(li, precio, nombre) {
   li.remove();
@@ -99,12 +104,7 @@ function eliminarItem(li, precio, nombre) {
   updateBadge();
 }
 
-// ======= EVENTOS =======
-
-botones.forEach((boton) => {
-  boton.addEventListener("click", agregarProducto);
-});
-
+// ======= VACIAR =======
 botonVaciar.addEventListener("click", () => {
   listaCarrito.innerHTML = "";
   totalAcumulado = 0;
@@ -117,17 +117,3 @@ botonVaciar.addEventListener("click", () => {
 
 // ======= CARGAR AL INICIAR =======
 cargarCarritoGuardado();
-
-const formContacto = document.getElementById('form-contacto');
-    const mensajeExito = document.getElementById('mensaje-exito');
-
-    if (formContacto) {
-        formContacto.addEventListener('submit', function(e) {
-            e.preventDefault();
-            mensajeExito.style.display = 'block';
-            formContacto.reset();
-            setTimeout(function() {
-                mensajeExito.style.display = 'none';
-            }, 5000);
-        });
-    }
