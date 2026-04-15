@@ -1,615 +1,1174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="https://perot-m.imgix.net/wp-content/uploads/earth-1.gif" alt="Logo" width="50" height="50" class="me-2">
-      RutaViajera
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Destinos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Experiencias/Tours</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contacto</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
-      <!-- Botón carrito -->
-      <button class="btn btn-outline-primary ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#carritoOffcanvas">
-        🛒 Carrito <span id="contador-carrito" class="badge bg-danger">0</span>
-      </button>
-    </div>
-  </div>
-</nav>
-
-  <main id="contenedor">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="https://perot-m.imgix.net/wp-content/uploads/earth-1.gif"
+            alt="Logo"
+            width="50"
+            height="50"
+            class="me-2"
+          />
+          RutaViajera
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Destinos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Experiencias/Tours</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Buscar
+            </button>
+          </form>
+          <!-- Botón carrito -->
+          <a href="#carrito" class="btn btn-outline-primary ms-2">
+            🛒 Carrito
+            <span id="contador-carrito" class="badge bg-danger">0</span>
+          </a>
+        </div>
+      </div>
+    </nav>
     
- 
-    <section id="destinos">
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
- 
-      <!-- Tarjeta 1: Colombia -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="./assets/cartagena.png" class="card-img-top" alt="Colombia" />
-          <div class="card-body">
-            <h5 class="card-title">🇨🇴 Colombia</h5>
-            <p class="card-text">Bogotá, Cartagena, Medellín</p>
-            <p class="card-text">$ 2.500.000</p>
-            <button class="btn btn-primary btn-agregar" data-nombre="Colombia" data-precio="2500000">🛒 Reservar</button>
-            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalColombia">ℹ️ Ver más</button>
+
+    <main id="contenedor">
+      <section id="destinos">
+        <div class="container">
+          <div
+            class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center"
+          >
+            <!-- Tarjeta 1: Colombia -->
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="./assets/cartagena.png"
+                  class="card-img-top"
+                  alt="Colombia"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">🇨🇴 Colombia</h5>
+                  <p class="card-text">Bogotá, Cartagena, Medellín</p>
+                  <p class="card-text">$ 2.500.000</p>
+                  <button
+                    class="btn btn-primary btn-agregar"
+                    data-nombre="Colombia"
+                    data-precio="2500000"
+                  >
+                    🛒 Reservar
+                  </button>
+                  <button
+                    class="btn btn-outline-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalColombia"
+                  >
+                    ℹ️ Ver más
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 2: México -->
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="./assets/mexico.png"
+                  class="card-img-top"
+                  alt="México"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">🇲🇽 México</h5>
+                  <p class="card-text">Cancún, CDMX, Tulum</p>
+                  <p class="card-text">$ 3.200.000</p>
+                  <button
+                    class="btn btn-primary btn-agregar"
+                    data-nombre="México"
+                    data-precio="3200000"
+                  >
+                    🛒 Reservar
+                  </button>
+                  <button
+                    class="btn btn-outline-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalMexico"
+                  >
+                    ℹ️ Ver más
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 3: Brasil -->
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="./assets/brasil.png"
+                  class="card-img-top"
+                  alt="Brasil"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">🇧🇷 Brasil</h5>
+                  <p class="card-text">Río de Janeiro, São Paulo</p>
+                  <p class="card-text">$ 4.000.000</p>
+                  <button
+                    class="btn btn-primary btn-agregar"
+                    data-nombre="Brasil"
+                    data-precio="4000000"
+                  >
+                    🛒 Reservar
+                  </button>
+                  <button
+                    class="btn btn-outline-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalBrasil"
+                  >
+                    ℹ️ Ver más
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 4: Argentina -->
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="./assets/agentina.png"
+                  class="card-img-top"
+                  alt="Argentina"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">🇦🇷 Argentina</h5>
+                  <p class="card-text">Buenos Aires, Patagonia</p>
+                  <p class="card-text">$ 3.800.000</p>
+                  <button
+                    class="btn btn-primary btn-agregar"
+                    data-nombre="Argentina"
+                    data-precio="3800000"
+                  >
+                    🛒 Reservar
+                  </button>
+                  <button
+                    class="btn btn-outline-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalArgentina"
+                  >
+                    ℹ️ Ver más
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 5: Perú -->
+            <div class="col">
+              <div class="card h-100">
+                <img src="./assets/peru.png" class="card-img-top" alt="Perú" />
+                <div class="card-body">
+                  <h5 class="card-title">🇵🇪 Perú</h5>
+                  <p class="card-text">Machu Picchu, Cusco, Lima</p>
+                  <p class="card-text">$ 2.900.000</p>
+                  <button
+                    class="btn btn-primary btn-agregar"
+                    data-nombre="Perú"
+                    data-precio="2900000"
+                  >
+                    🛒 Reservar
+                  </button>
+                  <button
+                    class="btn btn-outline-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalPeru"
+                  >
+                    ℹ️ Ver más
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 6: Chile -->
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="./assets/chile.png"
+                  class="card-img-top"
+                  alt="Chile"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">🇨🇱 Chile</h5>
+                  <p class="card-text">Santiago, Torres del Paine</p>
+                  <p class="card-text">$ 3.500.000</p>
+                  <button
+                    class="btn btn-primary btn-agregar"
+                    data-nombre="Chile"
+                    data-precio="3500000"
+                  >
+                    🛒 Reservar
+                  </button>
+                  <button
+                    class="btn btn-outline-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalChile"
+                  >
+                    ℹ️ Ver más
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 7: Cuba -->
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="https://flagcdn.com/w320/cu.png"
+                  class="card-img-top"
+                  alt="Cuba"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">🇨🇺 Cuba</h5>
+                  <p class="card-text">La Habana, Varadero</p>
+                  <p class="card-text">$ 2.700.000</p>
+                  <button
+                    class="btn btn-primary btn-agregar"
+                    data-nombre="Cuba"
+                    data-precio="2700000"
+                  >
+                    🛒 Reservar
+                  </button>
+                  <button
+                    class="btn btn-outline-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalCuba"
+                  >
+                    ℹ️ Ver más
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 8: Costa Rica -->
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="https://flagcdn.com/w320/cr.png"
+                  class="card-img-top"
+                  alt="Costa Rica"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">🇨🇷 Costa Rica</h5>
+                  <p class="card-text">San José, Manuel Antonio</p>
+                  <p class="card-text">$ 3.100.000</p>
+                  <button
+                    class="btn btn-primary btn-agregar"
+                    data-nombre="Costa Rica"
+                    data-precio="3100000"
+                  >
+                    🛒 Reservar
+                  </button>
+                  <button
+                    class="btn btn-outline-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalCostaRica"
+                  >
+                    ℹ️ Ver más
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 9: Panamá -->
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="https://flagcdn.com/w320/pa.png"
+                  class="card-img-top"
+                  alt="Panamá"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">🇵🇦 Panamá</h5>
+                  <p class="card-text">Ciudad de Panamá, Bocas del Toro</p>
+                  <p class="card-text">$ 2.800.000</p>
+                  <button
+                    class="btn btn-primary btn-agregar"
+                    data-nombre="Panamá"
+                    data-precio="2800000"
+                  >
+                    🛒 Reservar
+                  </button>
+                  <button
+                    class="btn btn-outline-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalPanama"
+                  >
+                    ℹ️ Ver más
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tarjeta 10: Ecuador -->
+            <div class="col">
+              <div class="card h-100">
+                <img
+                  src="https://flagcdn.com/w320/ec.png"
+                  class="card-img-top"
+                  alt="Ecuador"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">🇪🇨 Ecuador</h5>
+                  <p class="card-text">Quito, Galápagos, Cuenca</p>
+                  <p class="card-text">$ 3.300.000</p>
+                  <button
+                    class="btn btn-primary btn-agregar"
+                    data-nombre="Ecuador"
+                    data-precio="3300000"
+                  >
+                    🛒 Reservar
+                  </button>
+                  <button
+                    class="btn btn-outline-info"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalEcuador"
+                  >
+                    ℹ️ Ver más
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal Colombia -->
+      <div class="modal fade" id="modalColombia" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h6 class="text-muted fw-bold">COLOMBIA</h6>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="https://flagcdn.com/w320/co.png"
+                class="img-fluid rounded mb-3"
+                alt="Colombia"
+              />
+              <h4 class="fw-bold">Bogotá, Cartagena, Medellín y más</h4>
+              <div class="d-flex gap-4 my-3 text-muted">
+                <span>📅 10 Días / 9 Noches</span>
+                <span>❌ Cancelación gratuita</span>
+              </div>
+              <div class="d-flex gap-4 mb-3 text-muted">
+                <span>🗣️ Español</span>
+                <span>✈️ Suma 30.000 millas</span>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <p class="mb-0 text-muted">Desde</p>
+                  <h4 class="text-danger fw-bold">$ 2.500.000</h4>
+                </div>
+                <div class="text-end">
+                  <p class="text-warning mb-0">⭐ 4.5/5</p>
+                  <small class="text-decoration-underline">20 opiniones</small>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer border-0">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-agregar"
+                data-nombre="Colombia"
+                data-precio="2500000"
+              >
+                🛒 Reservar
+              </button>
+            </div>
           </div>
         </div>
       </div>
- 
-      <!-- Tarjeta 2: México -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="./assets/mexico.png" class="card-img-top" alt="México" />
-          <div class="card-body">
-            <h5 class="card-title">🇲🇽 México</h5>
-            <p class="card-text">Cancún, CDMX, Tulum</p>
-            <p class="card-text">$ 3.200.000</p>
-            <button class="btn btn-primary btn-agregar" data-nombre="México" data-precio="3200000">🛒 Reservar</button>
-            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalMexico">ℹ️ Ver más</button>
+
+      <!-- Modal México -->
+      <div class="modal fade" id="modalMexico" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h6 class="text-muted fw-bold">MÉXICO</h6>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="https://flagcdn.com/w320/mx.png"
+                class="img-fluid rounded mb-3"
+                alt="México"
+              />
+              <h4 class="fw-bold">Cancún, CDMX, Tulum y más</h4>
+              <div class="d-flex gap-4 my-3 text-muted">
+                <span>📅 12 Días / 11 Noches</span>
+                <span>❌ Cancelación gratuita</span>
+              </div>
+              <div class="d-flex gap-4 mb-3 text-muted">
+                <span>🗣️ Español</span>
+                <span>✈️ Suma 35.000 millas</span>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <p class="mb-0 text-muted">Desde</p>
+                  <h4 class="text-danger fw-bold">$ 3.200.000</h4>
+                </div>
+                <div class="text-end">
+                  <p class="text-warning mb-0">⭐ 4.7/5</p>
+                  <small class="text-decoration-underline">35 opiniones</small>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer border-0">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-agregar"
+                data-nombre="México"
+                data-precio="3200000"
+              >
+                🛒 Reservar
+              </button>
+            </div>
           </div>
         </div>
       </div>
- 
-      <!-- Tarjeta 3: Brasil -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="./assets/brasil.png" class="card-img-top" alt="Brasil" />
-          <div class="card-body">
-            <h5 class="card-title">🇧🇷 Brasil</h5>
-            <p class="card-text">Río de Janeiro, São Paulo</p>
-            <p class="card-text">$ 4.000.000</p>
-            <button class="btn btn-primary btn-agregar" data-nombre="Brasil" data-precio="4000000">🛒 Reservar</button>
-            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalBrasil">ℹ️ Ver más</button>
+
+      <!-- Modal Brasil -->
+      <div class="modal fade" id="modalBrasil" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h6 class="text-muted fw-bold">BRASIL</h6>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="https://flagcdn.com/w320/br.png"
+                class="img-fluid rounded mb-3"
+                alt="Brasil"
+              />
+              <h4 class="fw-bold">Río de Janeiro, São Paulo, Salvador y más</h4>
+              <div class="d-flex gap-4 my-3 text-muted">
+                <span>📅 14 Días / 13 Noches</span>
+                <span>❌ Cancelación gratuita</span>
+              </div>
+              <div class="d-flex gap-4 mb-3 text-muted">
+                <span>🗣️ Portugués</span>
+                <span>✈️ Suma 40.000 millas</span>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <p class="mb-0 text-muted">Desde</p>
+                  <h4 class="text-danger fw-bold">$ 4.000.000</h4>
+                </div>
+                <div class="text-end">
+                  <p class="text-warning mb-0">⭐ 4.8/5</p>
+                  <small class="text-decoration-underline">50 opiniones</small>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer border-0">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-agregar"
+                data-nombre="Brasil"
+                data-precio="4000000"
+              >
+                🛒 Reservar
+              </button>
+            </div>
           </div>
         </div>
       </div>
- 
-      <!-- Tarjeta 4: Argentina -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="./assets/agentina.png" class="card-img-top" alt="Argentina" />
-          <div class="card-body">
-            <h5 class="card-title">🇦🇷 Argentina</h5>
-            <p class="card-text">Buenos Aires, Patagonia</p>
-            <p class="card-text">$ 3.800.000</p>
-            <button class="btn btn-primary btn-agregar" data-nombre="Argentina" data-precio="3800000">🛒 Reservar</button>
-            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalArgentina">ℹ️ Ver más</button>
+
+      <!-- Modal Argentina -->
+      <div class="modal fade" id="modalArgentina" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h6 class="text-muted fw-bold">ARGENTINA</h6>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="https://flagcdn.com/w320/ar.png"
+                class="img-fluid rounded mb-3"
+                alt="Argentina"
+              />
+              <h4 class="fw-bold">Buenos Aires, Patagonia, Mendoza y más</h4>
+              <div class="d-flex gap-4 my-3 text-muted">
+                <span>📅 13 Días / 12 Noches</span>
+                <span>❌ Cancelación gratuita</span>
+              </div>
+              <div class="d-flex gap-4 mb-3 text-muted">
+                <span>🗣️ Español</span>
+                <span>✈️ Suma 38.000 millas</span>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <p class="mb-0 text-muted">Desde</p>
+                  <h4 class="text-danger fw-bold">$ 3.800.000</h4>
+                </div>
+                <div class="text-end">
+                  <p class="text-warning mb-0">⭐ 4.6/5</p>
+                  <small class="text-decoration-underline">28 opiniones</small>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer border-0">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-agregar"
+                data-nombre="Argentina"
+                data-precio="3800000"
+              >
+                🛒 Reservar
+              </button>
+            </div>
           </div>
         </div>
       </div>
- 
-      <!-- Tarjeta 5: Perú -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="./assets/peru.png" class="card-img-top" alt="Perú" />
-          <div class="card-body">
-            <h5 class="card-title">🇵🇪 Perú</h5>
-            <p class="card-text">Machu Picchu, Cusco, Lima</p>
-            <p class="card-text">$ 2.900.000</p>
-            <button class="btn btn-primary btn-agregar" data-nombre="Perú" data-precio="2900000">🛒 Reservar</button>
-            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalPeru">ℹ️ Ver más</button>
+
+      <!-- Modal Perú -->
+      <div class="modal fade" id="modalPeru" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h6 class="text-muted fw-bold">PERÚ</h6>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="https://flagcdn.com/w320/pe.png"
+                class="img-fluid rounded mb-3"
+                alt="Perú"
+              />
+              <h4 class="fw-bold">Machu Picchu, Cusco, Lima y más</h4>
+              <div class="d-flex gap-4 my-3 text-muted">
+                <span>📅 11 Días / 10 Noches</span>
+                <span>❌ Cancelación gratuita</span>
+              </div>
+              <div class="d-flex gap-4 mb-3 text-muted">
+                <span>🗣️ Español y Quechua</span>
+                <span>✈️ Suma 32.000 millas</span>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <p class="mb-0 text-muted">Desde</p>
+                  <h4 class="text-danger fw-bold">$ 2.900.000</h4>
+                </div>
+                <div class="text-end">
+                  <p class="text-warning mb-0">⭐ 4.9/5</p>
+                  <small class="text-decoration-underline">62 opiniones</small>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer border-0">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-agregar"
+                data-nombre="Perú"
+                data-precio="2900000"
+              >
+                🛒 Reservar
+              </button>
+            </div>
           </div>
         </div>
       </div>
- 
-      <!-- Tarjeta 6: Chile -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="./assets/chile.png" class="card-img-top" alt="Chile" />
-          <div class="card-body">
-            <h5 class="card-title">🇨🇱 Chile</h5>
-            <p class="card-text">Santiago, Torres del Paine</p>
-            <p class="card-text">$ 3.500.000</p>
-            <button class="btn btn-primary btn-agregar" data-nombre="Chile" data-precio="3500000">🛒 Reservar</button>
-            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalChile">ℹ️ Ver más</button>
+
+      <!-- Modal Chile -->
+      <div class="modal fade" id="modalChile" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h6 class="text-muted fw-bold">CHILE</h6>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="https://flagcdn.com/w320/cl.png"
+                class="img-fluid rounded mb-3"
+                alt="Chile"
+              />
+              <h4 class="fw-bold">Santiago, Torres del Paine, Atacama y más</h4>
+              <div class="d-flex gap-4 my-3 text-muted">
+                <span>📅 12 Días / 11 Noches</span>
+                <span>❌ Cancelación gratuita</span>
+              </div>
+              <div class="d-flex gap-4 mb-3 text-muted">
+                <span>🗣️ Español</span>
+                <span>✈️ Suma 36.000 millas</span>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <p class="mb-0 text-muted">Desde</p>
+                  <h4 class="text-danger fw-bold">$ 3.500.000</h4>
+                </div>
+                <div class="text-end">
+                  <p class="text-warning mb-0">⭐ 4.6/5</p>
+                  <small class="text-decoration-underline">41 opiniones</small>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer border-0">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-agregar"
+                data-nombre="Chile"
+                data-precio="3500000"
+              >
+                🛒 Reservar
+              </button>
+            </div>
           </div>
         </div>
       </div>
- 
-      <!-- Tarjeta 7: Cuba -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://flagcdn.com/w320/cu.png" class="card-img-top" alt="Cuba" />
-          <div class="card-body">
-            <h5 class="card-title">🇨🇺 Cuba</h5>
-            <p class="card-text">La Habana, Varadero</p>
-            <p class="card-text">$ 2.700.000</p>
-            <button class="btn btn-primary btn-agregar" data-nombre="Cuba" data-precio="2700000">🛒 Reservar</button>
-            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalCuba">ℹ️ Ver más</button>
+
+      <!-- Modal Cuba -->
+      <div class="modal fade" id="modalCuba" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h6 class="text-muted fw-bold">CUBA</h6>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="https://flagcdn.com/w320/cu.png"
+                class="img-fluid rounded mb-3"
+                alt="Cuba"
+              />
+              <h4 class="fw-bold">La Habana, Varadero, Trinidad y más</h4>
+              <div class="d-flex gap-4 my-3 text-muted">
+                <span>📅 9 Días / 8 Noches</span>
+                <span>❌ Cancelación gratuita</span>
+              </div>
+              <div class="d-flex gap-4 mb-3 text-muted">
+                <span>🗣️ Español</span>
+                <span>✈️ Suma 28.000 millas</span>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <p class="mb-0 text-muted">Desde</p>
+                  <h4 class="text-danger fw-bold">$ 2.700.000</h4>
+                </div>
+                <div class="text-end">
+                  <p class="text-warning mb-0">⭐ 4.4/5</p>
+                  <small class="text-decoration-underline">18 opiniones</small>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer border-0">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-agregar"
+                data-nombre="Cuba"
+                data-precio="2700000"
+              >
+                🛒 Reservar
+              </button>
+            </div>
           </div>
         </div>
       </div>
- 
-      <!-- Tarjeta 8: Costa Rica -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://flagcdn.com/w320/cr.png" class="card-img-top" alt="Costa Rica" />
-          <div class="card-body">
-            <h5 class="card-title">🇨🇷 Costa Rica</h5>
-            <p class="card-text">San José, Manuel Antonio</p>
-            <p class="card-text">$ 3.100.000</p>
-            <button class="btn btn-primary btn-agregar" data-nombre="Costa Rica" data-precio="3100000">🛒 Reservar</button>
-            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalCostaRica">ℹ️ Ver más</button>
+
+      <!-- Modal Costa Rica -->
+      <div class="modal fade" id="modalCostaRica" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h6 class="text-muted fw-bold">COSTA RICA</h6>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="https://flagcdn.com/w320/cr.png"
+                class="img-fluid rounded mb-3"
+                alt="Costa Rica"
+              />
+              <h4 class="fw-bold">San José, Manuel Antonio, Arenal y más</h4>
+              <div class="d-flex gap-4 my-3 text-muted">
+                <span>📅 10 Días / 9 Noches</span>
+                <span>❌ Cancelación gratuita</span>
+              </div>
+              <div class="d-flex gap-4 mb-3 text-muted">
+                <span>🗣️ Español</span>
+                <span>✈️ Suma 31.000 millas</span>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <p class="mb-0 text-muted">Desde</p>
+                  <h4 class="text-danger fw-bold">$ 3.100.000</h4>
+                </div>
+                <div class="text-end">
+                  <p class="text-warning mb-0">⭐ 4.7/5</p>
+                  <small class="text-decoration-underline">33 opiniones</small>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer border-0">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-agregar"
+                data-nombre="Costa Rica"
+                data-precio="3100000"
+              >
+                🛒 Reservar
+              </button>
+            </div>
           </div>
         </div>
       </div>
- 
-      <!-- Tarjeta 9: Panamá -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://flagcdn.com/w320/pa.png" class="card-img-top" alt="Panamá" />
-          <div class="card-body">
-            <h5 class="card-title">🇵🇦 Panamá</h5>
-            <p class="card-text">Ciudad de Panamá, Bocas del Toro</p>
-            <p class="card-text">$ 2.800.000</p>
-            <button class="btn btn-primary btn-agregar" data-nombre="Panamá" data-precio="2800000">🛒 Reservar</button>
-            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalPanama">ℹ️ Ver más</button>
+
+      <!-- Modal Panamá -->
+      <div class="modal fade" id="modalPanama" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h6 class="text-muted fw-bold">PANAMÁ</h6>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="https://flagcdn.com/w320/pa.png"
+                class="img-fluid rounded mb-3"
+                alt="Panamá"
+              />
+              <h4 class="fw-bold">
+                Ciudad de Panamá, Bocas del Toro, Colón y más
+              </h4>
+              <div class="d-flex gap-4 my-3 text-muted">
+                <span>📅 8 Días / 7 Noches</span>
+                <span>❌ Cancelación gratuita</span>
+              </div>
+              <div class="d-flex gap-4 mb-3 text-muted">
+                <span>🗣️ Español</span>
+                <span>✈️ Suma 29.000 millas</span>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <p class="mb-0 text-muted">Desde</p>
+                  <h4 class="text-danger fw-bold">$ 2.800.000</h4>
+                </div>
+                <div class="text-end">
+                  <p class="text-warning mb-0">⭐ 4.5/5</p>
+                  <small class="text-decoration-underline">25 opiniones</small>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer border-0">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-agregar"
+                data-nombre="Panamá"
+                data-precio="2800000"
+              >
+                🛒 Reservar
+              </button>
+            </div>
           </div>
         </div>
       </div>
- 
-      <!-- Tarjeta 10: Ecuador -->
-      <div class="col">
-        <div class="card h-100">
-          <img src="https://flagcdn.com/w320/ec.png" class="card-img-top" alt="Ecuador" />
-          <div class="card-body">
-            <h5 class="card-title">🇪🇨 Ecuador</h5>
-            <p class="card-text">Quito, Galápagos, Cuenca</p>
-            <p class="card-text">$ 3.300.000</p>
-            <button class="btn btn-primary btn-agregar" data-nombre="Ecuador" data-precio="3300000">🛒 Reservar</button>
-            <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#modalEcuador">ℹ️ Ver más</button>
+
+      <!-- Modal Ecuador -->
+      <div class="modal fade" id="modalEcuador" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h6 class="text-muted fw-bold">ECUADOR</h6>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <img
+                src="https://flagcdn.com/w320/ec.png"
+                class="img-fluid rounded mb-3"
+                alt="Ecuador"
+              />
+              <h4 class="fw-bold">Quito, Galápagos, Cuenca y más</h4>
+              <div class="d-flex gap-4 my-3 text-muted">
+                <span>📅 11 Días / 10 Noches</span>
+                <span>❌ Cancelación gratuita</span>
+              </div>
+              <div class="d-flex gap-4 mb-3 text-muted">
+                <span>🗣️ Español</span>
+                <span>✈️ Suma 33.000 millas</span>
+              </div>
+              <hr />
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <p class="mb-0 text-muted">Desde</p>
+                  <h4 class="text-danger fw-bold">$ 3.300.000</h4>
+                </div>
+                <div class="text-end">
+                  <p class="text-warning mb-0">⭐ 4.8/5</p>
+                  <small class="text-decoration-underline">44 opiniones</small>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer border-0">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary btn-agregar"
+                data-nombre="Ecuador"
+                data-precio="3300000"
+              >
+                🛒 Reservar
+              </button>
+            </div>
           </div>
         </div>
       </div>
- 
-    </div>
+
+      <section id="carrito">
+        <div class="col-md-4">
+          <div class="card p-3 shadow">
+            <h4>🛒 Carrito de viajes</h4>
+            <ul id="lista-carrito" class="list-group mb-3"></ul>
+            <p id="mensaje-vacio" class="text-muted">Tu carrito está vacío</p>
+            <h4>Total: <span id="total">$0</span></h4>
+            <button id="btn-vaciar" class="btn btn-danger w-100 mt-2">
+              Vaciar Carrito
+            </button>
+          </div>
+        </div>
+      </section>
+
+
+<section id="hero">
+  <div class="hero-video">
+    <video autoplay muted loop playsinline>
+      <source src="./assets/hero-bg.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-content">
+    <h1>Descubre el mundo con RutaViajera</h1>
+    <p>Los mejores destinos de América te esperan</p>
+    <a href="#destinos" class="btn btn-primary btn-lg">Ver destinos ✈️</a>
   </div>
 </section>
- 
-<!-- Modal Colombia -->
-<div class="modal fade" id="modalColombia" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <h6 class="text-muted fw-bold">COLOMBIA</h6>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <img src="https://flagcdn.com/w320/co.png" class="img-fluid rounded mb-3" alt="Colombia">
-        <h4 class="fw-bold">Bogotá, Cartagena, Medellín y más</h4>
-        <div class="d-flex gap-4 my-3 text-muted">
-          <span>📅 10 Días / 9 Noches</span>
-          <span>❌ Cancelación gratuita</span>
-        </div>
-        <div class="d-flex gap-4 mb-3 text-muted">
-          <span>🗣️ Español</span>
-          <span>✈️ Suma 30.000 millas</span>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <p class="mb-0 text-muted">Desde</p>
-            <h4 class="text-danger fw-bold">$ 2.500.000</h4>
-          </div>
-          <div class="text-end">
-            <p class="text-warning mb-0">⭐ 4.5/5</p>
-            <small class="text-decoration-underline">20 opiniones</small>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary btn-agregar" data-nombre="Colombia" data-precio="2500000">🛒 Reservar</button>
-      </div>
-    </div>
-  </div>
-</div>
+    </main>
 
-<!-- Modal México -->
-<div class="modal fade" id="modalMexico" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <h6 class="text-muted fw-bold">MÉXICO</h6>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <img src="https://flagcdn.com/w320/mx.png" class="img-fluid rounded mb-3" alt="México">
-        <h4 class="fw-bold">Cancún, CDMX, Tulum y más</h4>
-        <div class="d-flex gap-4 my-3 text-muted">
-          <span>📅 12 Días / 11 Noches</span>
-          <span>❌ Cancelación gratuita</span>
-        </div>
-        <div class="d-flex gap-4 mb-3 text-muted">
-          <span>🗣️ Español</span>
-          <span>✈️ Suma 35.000 millas</span>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <p class="mb-0 text-muted">Desde</p>
-            <h4 class="text-danger fw-bold">$ 3.200.000</h4>
-          </div>
-          <div class="text-end">
-            <p class="text-warning mb-0">⭐ 4.7/5</p>
-            <small class="text-decoration-underline">35 opiniones</small>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary btn-agregar" data-nombre="México" data-precio="3200000">🛒 Reservar</button>
-      </div>
+    <!-- formulario de contacto -->
+<section class="container my-5 contacto">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold" style="color: var(--color-primario);">✈️ Contáctanos</h2>
+        <p class="text-muted">Cuéntanos qué viaje sueñas y te ayudamos a hacerlo realidad</p>
     </div>
-  </div>
-</div>
 
-<!-- Modal Brasil -->
-<div class="modal fade" id="modalBrasil" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <h6 class="text-muted fw-bold">BRASIL</h6>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <img src="https://flagcdn.com/w320/br.png" class="img-fluid rounded mb-3" alt="Brasil">
-        <h4 class="fw-bold">Río de Janeiro, São Paulo, Salvador y más</h4>
-        <div class="d-flex gap-4 my-3 text-muted">
-          <span>📅 14 Días / 13 Noches</span>
-          <span>❌ Cancelación gratuita</span>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card p-4 shadow-sm" style="border-radius: 20px;">
+                <form id="form-contacto">
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Nombre completo *</label>
+                            <input type="text" id="nombre" class="form-control" placeholder="Ana Martínez" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Correo *</label>
+                            <input type="email" id="email" class="form-control" placeholder="tu@correo.com" required>
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">Mensaje *</label>
+                            <textarea id="mensaje" class="form-control" rows="4" required></textarea>
+                        </div>
+
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-agregar">Enviar</button>
+                        </div>
+
+                    </div>
+                </form>
+
+                <!-- mensaje de exito -->
+                <div id="mensaje-exito" class="alert alert-success mt-4 text-center" style="display: none;">
+                    ✅ Gracias. En breve te contactaremos.
+                </div>
+            </div>
         </div>
-        <div class="d-flex gap-4 mb-3 text-muted">
-          <span>🗣️ Portugués</span>
-          <span>✈️ Suma 40.000 millas</span>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <p class="mb-0 text-muted">Desde</p>
-            <h4 class="text-danger fw-bold">$ 4.000.000</h4>
-          </div>
-          <div class="text-end">
-            <p class="text-warning mb-0">⭐ 4.8/5</p>
-            <small class="text-decoration-underline">50 opiniones</small>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary btn-agregar" data-nombre="Brasil" data-precio="4000000">🛒 Reservar</button>
-      </div>
     </div>
-  </div>
-</div>
+</section>
 
-<!-- Modal Argentina -->
-<div class="modal fade" id="modalArgentina" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <h6 class="text-muted fw-bold">ARGENTINA</h6>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <img src="https://flagcdn.com/w320/ar.png" class="img-fluid rounded mb-3" alt="Argentina">
-        <h4 class="fw-bold">Buenos Aires, Patagonia, Mendoza y más</h4>
-        <div class="d-flex gap-4 my-3 text-muted">
-          <span>📅 13 Días / 12 Noches</span>
-          <span>❌ Cancelación gratuita</span>
-        </div>
-        <div class="d-flex gap-4 mb-3 text-muted">
-          <span>🗣️ Español</span>
-          <span>✈️ Suma 38.000 millas</span>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <p class="mb-0 text-muted">Desde</p>
-            <h4 class="text-danger fw-bold">$ 3.800.000</h4>
+    <footer class="main-footer pt-5 pb-1">
+      <!-- pt-5 es padding top y pb-1 es padding bottom-->
+      <div class="container">
+        <div class="row gy-3">
+          <div class="col-lg-4 col-md-12">
+            <h4 class="fw-bold mb-4">
+              <i class="bi bi-airplane-engines me-3"></i>Agencia de Viajes
+            </h4>
+            <!--bi iconos en boot-->
+            <p class="pe-lg-5 fw-medium">
+              Te vendemos los mejores viajes y destinos al mejor precio del
+              mercado, contando con un aplataforma intuitiva y facil de manejar
+              para que agregues tus destinos al carrito y disfrutes de unas
+              vacaciones inolvidables.
+            </p>
+            <div class="d-flex gap-2 mt-4">
+              <!--gap separa espacio en elementos -->
+              <a target="_blank" href="../assets/social.png" class="redes-btn"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a target="_blank" href="../assets/social.png" class="redes-btn"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a target="_blank" href="../assets/social.png" class="redes-btn"
+                ><i class="bi bi-whatsapp"></i
+              ></a>
+            </div>
           </div>
-          <div class="text-end">
-            <p class="text-warning mb-0">⭐ 4.6/5</p>
-            <small class="text-decoration-underline">28 opiniones</small>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary btn-agregar" data-nombre="Argentina" data-precio="3800000">🛒 Reservar</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Modal Perú -->
-<div class="modal fade" id="modalPeru" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <h6 class="text-muted fw-bold">PERÚ</h6>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <img src="https://flagcdn.com/w320/pe.png" class="img-fluid rounded mb-3" alt="Perú">
-        <h4 class="fw-bold">Machu Picchu, Cusco, Lima y más</h4>
-        <div class="d-flex gap-4 my-3 text-muted">
-          <span>📅 11 Días / 10 Noches</span>
-          <span>❌ Cancelación gratuita</span>
-        </div>
-        <div class="d-flex gap-4 mb-3 text-muted">
-          <span>🗣️ Español y Quechua</span>
-          <span>✈️ Suma 32.000 millas</span>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <p class="mb-0 text-muted">Desde</p>
-            <h4 class="text-danger fw-bold">$ 2.900.000</h4>
+          <div class="col-lg-2 col-md-4">
+            <h6 class="text-uppercase fw-bold mb-3">Explorar</h6>
+            <ul class="list-unstyled d-flex flex-column gap-2">
+              <li><a href="#" class="footer-link">Inicio</a></li>
+              <li><a href="#" class="footer-link">Destinos</a></li>
+              <li><a href="#" class="footer-link">Carrito</a></li>
+            </ul>
           </div>
-          <div class="text-end">
-            <p class="text-warning mb-0">⭐ 4.9/5</p>
-            <small class="text-decoration-underline">62 opiniones</small>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary btn-agregar" data-nombre="Perú" data-precio="2900000">🛒 Reservar</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Modal Chile -->
-<div class="modal fade" id="modalChile" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <h6 class="text-muted fw-bold">CHILE</h6>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <img src="https://flagcdn.com/w320/cl.png" class="img-fluid rounded mb-3" alt="Chile">
-        <h4 class="fw-bold">Santiago, Torres del Paine, Atacama y más</h4>
-        <div class="d-flex gap-4 my-3 text-muted">
-          <span>📅 12 Días / 11 Noches</span>
-          <span>❌ Cancelación gratuita</span>
-        </div>
-        <div class="d-flex gap-4 mb-3 text-muted">
-          <span>🗣️ Español</span>
-          <span>✈️ Suma 36.000 millas</span>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <p class="mb-0 text-muted">Desde</p>
-            <h4 class="text-danger fw-bold">$ 3.500.000</h4>
+          <div class="col-lg-3 col-md-4">
+            <h6 class="text-uppercase fw-bold mb-4 text-accent">
+              Web Desarrollada por
+            </h6>
+            <div class="d-flex flex-column gap-2">
+              <div class="miembros-card">
+                <div class="miembros-dot"></div>
+                <span class="small fw-medium">Fabian Beltran</span>
+              </div>
+              <div class="miembros-card">
+                <div class="miembros-dot"></div>
+                <span class="small fw-medium">Quiryat Moncada</span>
+              </div>
+              <div class="miembros-card">
+                <div class="miembros-dot"></div>
+                <span class="small fw-medium">Enith Vargas</span>
+              </div>
+              <div class="miembros-card">
+                <div class="miembros-dot"></div>
+                <span class="small fw-medium">Julian Valderrama</span>
+              </div>
+            </div>
           </div>
-          <div class="text-end">
-            <p class="text-warning mb-0">⭐ 4.6/5</p>
-            <small class="text-decoration-underline">41 opiniones</small>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary btn-agregar" data-nombre="Chile" data-precio="3500000">🛒 Reservar</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Modal Cuba -->
-<div class="modal fade" id="modalCuba" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <h6 class="text-muted fw-bold">CUBA</h6>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <img src="https://flagcdn.com/w320/cu.png" class="img-fluid rounded mb-3" alt="Cuba">
-        <h4 class="fw-bold">La Habana, Varadero, Trinidad y más</h4>
-        <div class="d-flex gap-4 my-3 text-muted">
-          <span>📅 9 Días / 8 Noches</span>
-          <span>❌ Cancelación gratuita</span>
-        </div>
-        <div class="d-flex gap-4 mb-3 text-muted">
-          <span>🗣️ Español</span>
-          <span>✈️ Suma 28.000 millas</span>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <p class="mb-0 text-muted">Desde</p>
-            <h4 class="text-danger fw-bold">$ 2.700.000</h4>
-          </div>
-          <div class="text-end">
-            <p class="text-warning mb-0">⭐ 4.4/5</p>
-            <small class="text-decoration-underline">18 opiniones</small>
+          <div class="col-lg-3 col-md-4">
+            <h6 class="text-uppercase fw-bold mb-4 text-accent">Newsletter</h6>
+            <p class="small text-muted mb-3">
+              Recibe ofertas exclusivas en tu correo.
+            </p>
+            <div class="input-group">
+              <input
+                type="email"
+                class="form-control footer-input"
+                placeholder="Tu email..."
+              />
+              <button
+                class="btn btn-primary"
+                type="button"
+                style="background-color: var(--color-terciario); border: none"
+              >
+                <i class="bi bi-send"></i>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary btn-agregar" data-nombre="Cuba" data-precio="2700000">🛒 Reservar</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- Modal Costa Rica -->
-<div class="modal fade" id="modalCostaRica" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <h6 class="text-muted fw-bold">COSTA RICA</h6>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <img src="https://flagcdn.com/w320/cr.png" class="img-fluid rounded mb-3" alt="Costa Rica">
-        <h4 class="fw-bold">San José, Manuel Antonio, Arenal y más</h4>
-        <div class="d-flex gap-4 my-3 text-muted">
-          <span>📅 10 Días / 9 Noches</span>
-          <span>❌ Cancelación gratuita</span>
-        </div>
-        <div class="d-flex gap-4 mb-3 text-muted">
-          <span>🗣️ Español</span>
-          <span>✈️ Suma 31.000 millas</span>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <p class="mb-0 text-muted">Desde</p>
-            <h4 class="text-danger fw-bold">$ 3.100.000</h4>
-          </div>
-          <div class="text-end">
-            <p class="text-warning mb-0">⭐ 4.7/5</p>
-            <small class="text-decoration-underline">33 opiniones</small>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary btn-agregar" data-nombre="Costa Rica" data-precio="3100000">🛒 Reservar</button>
-      </div>
-    </div>
-  </div>
-</div>
+        <hr
+          class="my-4 border-5"
+          style="border-color: var(--color-terciario)"
+        />
 
-<!-- Modal Panamá -->
-<div class="modal fade" id="modalPanama" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <h6 class="text-muted fw-bold">PANAMÁ</h6>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <img src="https://flagcdn.com/w320/pa.png" class="img-fluid rounded mb-3" alt="Panamá">
-        <h4 class="fw-bold">Ciudad de Panamá, Bocas del Toro, Colón y más</h4>
-        <div class="d-flex gap-4 my-3 text-muted">
-          <span>📅 8 Días / 7 Noches</span>
-          <span>❌ Cancelación gratuita</span>
-        </div>
-        <div class="d-flex gap-4 mb-3 text-muted">
-          <span>🗣️ Español</span>
-          <span>✈️ Suma 29.000 millas</span>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <p class="mb-0 text-muted">Desde</p>
-            <h4 class="text-danger fw-bold">$ 2.800.000</h4>
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="small mb-0 text-muted">
+              &copy; 2026 Agencia de Viajes. Todos los derechos reservados.
+            </p>
           </div>
-          <div class="text-end">
-            <p class="text-warning mb-0">⭐ 4.5/5</p>
-            <small class="text-decoration-underline">25 opiniones</small>
+          <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+            <span class="small text-muted me-3"
+              ><a href="" class="footer-link">Privacidad</a></span
+            >
+            <span class="small text-muted"
+              ><a href="" class="footer-link">Términos y condiciones</a></span
+            >
           </div>
         </div>
       </div>
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary btn-agregar" data-nombre="Panamá" data-precio="2800000">🛒 Reservar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal Ecuador -->
-<div class="modal fade" id="modalEcuador" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header border-0">
-        <h6 class="text-muted fw-bold">ECUADOR</h6>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body">
-        <img src="https://flagcdn.com/w320/ec.png" class="img-fluid rounded mb-3" alt="Ecuador">
-        <h4 class="fw-bold">Quito, Galápagos, Cuenca y más</h4>
-        <div class="d-flex gap-4 my-3 text-muted">
-          <span>📅 11 Días / 10 Noches</span>
-          <span>❌ Cancelación gratuita</span>
-        </div>
-        <div class="d-flex gap-4 mb-3 text-muted">
-          <span>🗣️ Español</span>
-          <span>✈️ Suma 33.000 millas</span>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-between align-items-center">
-          <div>
-            <p class="mb-0 text-muted">Desde</p>
-            <h4 class="text-danger fw-bold">$ 3.300.000</h4>
-          </div>
-          <div class="text-end">
-            <p class="text-warning mb-0">⭐ 4.8/5</p>
-            <small class="text-decoration-underline">44 opiniones</small>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer border-0">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary btn-agregar" data-nombre="Ecuador" data-precio="3300000">🛒 Reservar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<section>
-<div class="col-md-4">
-    <div class="card p-3 shadow">
-      <h4>🛒 Carrito de viajes</h4>
-      <ul id="lista-carrito" class="list-group mb-3"></ul>
-      <p id="mensaje-vacio" class="text-muted">Tu carrito está vacío</p>
-      <h4>Total: <span id="total">$0</span></h4>
-      <button id="btn-vaciar" class="btn btn-danger w-100 mt-2">Vaciar Carrito</button>
-    </div>
-  </div>
-  </section>
- 
-</main>
-    <footer id="pieDePagina">
-
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
     <script src="./script.js"></script>
-</body>
-
+  </body>
 </html>
