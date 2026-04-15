@@ -117,3 +117,21 @@ botonVaciar.addEventListener("click", () => {
 
 // ======= CARGAR AL INICIAR =======
 cargarCarritoGuardado();
+
+document.addEventListener("DOMContentLoaded", function () { //DOMContentLoaded Lo que hace es que js no busque el boton antes de que se cargue
+  const btn = document.getElementById("btn-news");
+  const input = document.getElementById("input-news");
+ 
+  btn.addEventListener("click", function () {
+    const email = input.value;
+ 
+ 
+    if (email === "" || !email.includes("@")) {
+      alert("Por favor, ingresa un correo electrónico válido.");
+    } else {
+      alert("¡Gracias por suscribirte! Pronto recibirás ofertas en: " + email);
+ 
+      input.value = "";
+    }
+  });
+});
