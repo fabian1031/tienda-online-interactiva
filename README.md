@@ -8,6 +8,7 @@
 * Quiryat Moncada
 * Julián Valderrama
 * Enith Vargas
+* Alexandra Diaz
 
 ## Descripción del proyecto
 
