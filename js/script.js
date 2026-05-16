@@ -71,7 +71,7 @@ function agregarItemAlDOM(nombre, precio) {
 }
 
 // ======= EVENTO GLOBAL =======
-document.addEventListener("click", function(e) {
+document.addEventListener("click", function (e) {
   if (e.target.classList.contains("btn-agregar")) {
     let precio = Number(e.target.dataset.precio);
     let nombre = e.target.dataset.nombre;
@@ -86,6 +86,20 @@ document.addEventListener("click", function(e) {
     agregarItemAlDOM(nombre, precio);
     updateTotal();
     updateBadge();
+    //Notificaciones
+    Toastify({
+      text: `✈️ ${nombre} agregado al carrito`,
+      duration: 3000,
+      gravity: "bottom",
+      position: "right",
+      style: {
+        background: "var(--color-primario)",
+        borderRadius: "25px",
+        fontFamily: "Ubuntu, sans-serif",
+        fontSize: "0.9rem",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.15)"
+      }
+    }).showToast();
   }
 });
 
@@ -118,20 +132,21 @@ botonVaciar.addEventListener("click", () => {
 // ======= CARGAR AL INICIAR =======
 cargarCarritoGuardado();
 
-document.addEventListener("DOMContentLoaded", function () { //DOMContentLoaded Lo que hace es que js no busque el boton antes de que se cargue
+document.addEventListener("DOMContentLoaded", function () {
   const btn = document.getElementById("btn-news");
   const input = document.getElementById("input-news");
- 
+
   btn.addEventListener("click", function () {
     const email = input.value;
- 
- 
+
+
     if (email === "" || !email.includes("@")) {
       alert("Por favor, ingresa un correo electrónico válido.");
     } else {
       alert("¡Gracias por suscribirte! Pronto recibirás ofertas en: " + email);
- 
+
       input.value = "";
     }
   });
 });
+
