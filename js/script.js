@@ -149,4 +149,41 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+// ======= BUSCADOR =======
+const formBuscar = document.querySelector('form[role="search"]');
+const inputBuscar = document.querySelector('form[role="search"] input');
+
+formBuscar.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const termino = inputBuscar.value.trim().toLowerCase();
+  if (!termino) return;
+
+  const tarjetas = document.querySelectorAll(".card");
+  let encontrado = false;
+
+  tarjetas.forEach(card => {
+    const titulo = card.querySelector(".card-title");
+    if (titulo && titulo.textContent.toLowerCase().includes(termino)) {
+      card.scrollIntoView({ behavior: "smooth", block: "center" });
+      encontrado = true;
+    }
+  });
+
+  if (!encontrado) {
+    Toastify({
+      text: `No se encontró "${inputBuscar.value}"`,
+      duration: 3000,
+      gravity: "bottom",
+      position: "right",
+      style: {
+        background: "#dc3545",
+        borderRadius: "25px",
+        fontFamily: "Ubuntu, sans-serif",
+        fontSize: "0.9rem"
+      }
+    }).showToast();
+  }
+
+  inputBuscar.value = "";
+});
 
